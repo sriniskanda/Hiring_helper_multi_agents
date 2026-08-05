@@ -1,0 +1,21 @@
+We are looking for an experienced AI Assurance Engineer with strong expertise in Python, Test Automation, and Generative AI technologies to support the development and validation of AI-powered applications and platforms. The ideal candidate should be capable of building automation solutions, validating AI/LLM outputs, and ensuring AI systems meet quality, security, reliability, and compliance requirements.
+Required Skills:
+Strong programming experience in Python 
+Hands-on experience with Playwright and/or Selenium 
+API Automation and Testing 
+PyTest or equivalent automation frameworks 
+SQL and Database Validation 
+CI/CD, Git, and Docker 
+Experience developing automation frameworks and reusable test assets 
+ 
+Preferred Skills:
+Generative AI and Large Language Models (LLMs) 
+Prompt Engineering and AI Evaluation 
+RAG (Retrieval-Augmented Generation) concepts 
+LangChain / LangGraph 
+AI Agent and Agentic Workflow Testing 
+FastAPI and REST API Development 
+AI Governance, Responsible AI, and Compliance awareness 
+ 
+Ideal Candidate:
+A strong Python Automation Engineer with exposure to GenAI, AI Testing, and Modern Automation Frameworks, capable of supporting enterprise-scale AI quality assurance and assurance engineering initiatives.
