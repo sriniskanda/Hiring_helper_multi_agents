@@ -2,12 +2,12 @@ from langgraph.graph import StateGraph, START, END
 from langchain_core.messages import SystemMessage, HumanMessage, ToolMessage, AnyMessage
 from pydantic import BaseModel, Field
 from langchain.tools import tool
-from langchain_ollama import ChatOllama
 from langgraph.prebuilt import ToolNode
 from extract_pdf import ExtractResumePdf
 from typing import List, TypedDict, Dict
 import os
 import pandas as pd
+from llm_wrapper import LLM_wrapper
 
 # Defining Resume Data Schema
 class ResumeSchema(BaseModel):
@@ -21,7 +21,7 @@ class ResumeSchema(BaseModel):
     certifications : List[str] = Field(description="Candidate acquired list of certifications")
 
 class AnalysisSchema(BaseModel):
-    rating : float = Field(description="Rate the candidate based on the skill sets, educations and work experiences, Rank the Candidate (Score 1-10) ")
+    rating : int = Field(description="You are expert recruiter, Give a rating to the candidate based given job description between range 1 to 100")
     analysis_summary : str = Field(description="Give brief summary and highlight major points")
     additional_achievements : str = Field(description="Highlight major certifications, achievements or recognitions that is relevent to given job description")
     ratings_sentiment : str = Field(description="Conclude results in this 4 categories Excelent, Good, Average, Not Fit") 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     # # Job Description Path
     jd_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),"JD")
     # # Initilize LLM
-    model = ChatOllama(model="gemma4:e2b",temperature=0)
+    model = LLM_wrapper(llm="ollama",model="gemma4:e2b").choose_llm()
     # # Call ExtractResumePdf to extract resume data content
     # # Job Description file path
     jd = open(jd_file_path+"\\job_description.txt").read()
